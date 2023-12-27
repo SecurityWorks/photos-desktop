@@ -48,7 +48,6 @@ import {
     updateOptOutOfCrashReports,
     getPlatform,
 } from './api/common';
-import { fixHotReloadNext12 } from './utils/preload';
 import {
     isFolder,
     getDirFiles,
@@ -67,7 +66,6 @@ import {
 import { runFFmpegCmd } from './api/ffmpeg';
 import { computeImageEmbedding, computeTextEmbedding } from './api/clip';
 
-fixHotReloadNext12();
 setupLogging();
 setupRendererProcessStatsLogger();
 
