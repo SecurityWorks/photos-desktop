@@ -65,13 +65,12 @@ import {
 } from './utils/processStats';
 import { runFFmpegCmd } from './api/ffmpeg';
 import { computeImageEmbedding, computeTextEmbedding } from './api/clip';
+const { contextBridge } = require('electron');
 
 setupLogging();
 setupRendererProcessStatsLogger();
 
-const windowObject: any = window;
-
-windowObject['ElectronAPIs'] = {
+contextBridge.exposeInMainWorld('ElectronAPIs', {
     exists,
     checkExistsAndCreateDir,
     saveStreamToDisk,
@@ -124,4 +123,4 @@ windowObject['ElectronAPIs'] = {
     getPlatform,
     getCacheDirectory,
     setCustomCacheDirectory,
-};
+});

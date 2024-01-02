@@ -28,7 +28,9 @@ export async function openDiskCache(
     if (!existsSync(cacheBucketDir)) {
         await mkdir(cacheBucketDir, { recursive: true });
     }
-    return new DiskCache(cacheBucketDir, cacheLimitInBytes);
+    const x = new DiskCache(cacheBucketDir, cacheLimitInBytes);
+    console.log('DiskCache', x.delete, x);
+    return x;
 }
 
 export async function deleteDiskCache(cacheName: string) {

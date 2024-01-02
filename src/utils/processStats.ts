@@ -155,6 +155,7 @@ async function logRendererProcessStats() {
 }
 
 export function setupMainProcessStatsLogger() {
+    return;
     setInterval(
         logSpikeMainMemoryUsage,
         SPIKE_DETECTION_INTERVAL_IN_MICROSECONDS
@@ -163,6 +164,7 @@ export function setupMainProcessStatsLogger() {
 }
 
 export function setupRendererProcessStatsLogger() {
+    return;
     setInterval(
         logSpikeRendererMemoryUsage,
         SPIKE_DETECTION_INTERVAL_IN_MICROSECONDS

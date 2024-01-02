@@ -17,9 +17,8 @@ export async function createWindow(): Promise<BrowserWindow> {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
         webPreferences: {
-            sandbox: false,
+            nodeIntegration: true,
             preload: path.join(__dirname, '../preload.js'),
-            contextIsolation: false,
         },
         icon: appIcon,
         show: false, // don't show the main window on load,
